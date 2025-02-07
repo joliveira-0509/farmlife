@@ -1,9 +1,11 @@
+
 .header{
-    background-color: #2D5134;
+    background:linear-gradient(to right, #2D5134,#64B775) ;
     width: 100vw;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: fixed;
 }
 
 
@@ -14,6 +16,14 @@
     padding: 0px 30px 0px 20px;
 }
 
+.imagem{
+    margin: 8px;
+    width: 4vw;
+    height: auto;
+    border-radius: 100%;
+    background-color: aliceblue;
+}
+
 .name{
     display: flex;
     flex-direction: column;
@@ -22,4 +32,18 @@
 
 .name h1{
     font-family: '';
+}
+.acessos{
+    background-color: #64B775;
+    display: flex;
+    justify-content: center;
+}
+
+.acessos ul{
+    width: 100vw;
+    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
 }

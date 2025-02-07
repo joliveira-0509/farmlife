@@ -31,7 +31,7 @@ export default function Header() {
                 <nav>
                     <ul className={style.li}>
                         <li >
-                            <Link href="/sobre" className={style.link}>Home</Link>
+                            <Link href="/" className={style.link}>Home</Link>
                         </li>
                         <li>
                             <Link href="/state" className={style.link}>Paciente</Link>
