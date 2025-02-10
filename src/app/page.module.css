@@ -9,31 +9,33 @@
 }
 
 .cards {
-    display: block;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: auto;
 }
 
+.subcard{
+    display: flex;
+
+}
+
 .card {
+    margin: 20px;
     width: 25vw;
     height: 27vh;
     background-color: #64B775;
     border-radius: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.card h4{
+.card h4 {
     font-size: 12px;
-    font-size:small;
+    font-size: small;
     width: 75%;
 }
-
-.card1 {
-    display: inline-block;
-
-}
-
