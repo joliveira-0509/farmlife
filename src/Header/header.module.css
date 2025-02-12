@@ -47,3 +47,18 @@
     align-items: center;
     justify-content:space-evenly;
 }
+
+.medico{
+    width: 30%;
+    max-width: 30%;
+    height: auto;
+    display: flex;
+    background-color: #64B775;
+}
+
+.medico ul{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #64B775;
+}
