@@ -1,0 +1,79 @@
+.fundo{
+    background-color: #9ce4aa71;
+    height: auto;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 6px 6px 21px -10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10vh;
+    position: relative;
+    z-index: 0;
+    padding-top: 20vh;
+}
+
+.titulo {
+    font-size: 26px;
+    margin-top: 2.5vh;
+    text-align: center;
+    font-weight: bold;
+    color: #02330d;
+}
+
+.titulo2{
+    display: flex;
+    justify-content: center;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.input input {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #127b3a;
+    border-radius: 5px;
+    width: 60%;
+    max-width: 400px;
+    background-color: #F7F7F7;
+    color: #02330a;
+}
+
+.tabela {
+    margin-top: 20px;
+    overflow-x: auto;
+    padding: 30px;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #F7F7F7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela th, 
+.tabela td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #a9e5b8;
+}
+
+.tabela th {
+    background-color: #127b29;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela tr:hover {
+    background-color: #a9e5ae;
+}
+
+.tabela td {
+    color: #02330d;
+}
