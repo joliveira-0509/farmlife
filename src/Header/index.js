@@ -92,8 +92,6 @@ export default function Header() {
                                 </ul>
                             )}
                         </div>
-
-
                     </ul>
                 </nav>
             </section>

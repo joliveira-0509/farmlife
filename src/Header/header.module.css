@@ -1,6 +1,5 @@
-
-.header{
-    background:linear-gradient(to right, #2D5134,#64B775) ;
+.header {
+    background: linear-gradient(to right, #2D5134, #64B775);
     width: 100vw;
     flex-direction: row;
     align-items: center;
@@ -9,14 +8,14 @@
 }
 
 
-.navegador{
+.navegador {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px 0px 20px;
 }
 
-.imagem{
+.imagem {
     margin: 8px;
     width: 4vw;
     height: auto;
@@ -24,41 +23,91 @@
     background-color: aliceblue;
 }
 
-.name{
+.name {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.name h1{
+.name h1 {
     font-family: '';
 }
-.acessos{
+
+.acessos {
     background-color: #64B775;
     display: flex;
     justify-content: center;
 }
 
-.acessos ul{
+.acessos ul {
     width: 100vw;
     height: 4vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
-.medico{
-    width: 30%;
-    max-width: 30%;
+.medico {
+    width: 10%;
+    max-width: 10%;
     height: auto;
     display: flex;
-    background-color: #64B775;
 }
 
-.medico ul{
-    margin-top: 20px;
+.medico ul {
+    width: 8vw;
+    height: auto;
+    margin-bottom: -20vh;
+    margin-left: -4vw;
+    margin-top: 2vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #64B775;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
+.paciente {
+    width: 10%;
+    max-width: 10%;
+    height: auto;
+    display: flex;
+}
+
+.paciente ul {
+    width: 8vw;
+    height: auto;
+    margin-bottom: -20vh;
+    margin-left: -5vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #64B775;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.agendamento {
+    width: 10%;
+    max-width: 10%;
+    height: auto;
+    display: flex;
+}
+
+.agendamento ul {
+    width: 8vw;
+    height: auto;
+    margin-bottom: -20vh;
+    margin-left: -6vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #64B775;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
