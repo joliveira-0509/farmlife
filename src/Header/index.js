@@ -55,7 +55,7 @@ export default function Header() {
                             {medicoOpen && (
                                 <ul>
                                     <li>Listar Registros</li>
-                                    <li> <Link href='/medicos'>Buscar</Link></li>
+                                    <li> <Link href='/medicos' >Buscar</Link> </li>
                                     <li>Adicionar Novo</li>
                                     <li>Editar</li>
                                     <li>Excluir</li>
@@ -71,7 +71,7 @@ export default function Header() {
                             {pacienteOpen && (
                                 <ul>
                                     <li>Listar Registros</li>
-                                    <li>Buscar</li>
+                                    <li><Link href='/pacientes'>Buscar</Link></li>
                                     <li>Adicionar Novo</li>
                                     <li>Editar</li>
                                     <li>Excluir</li>

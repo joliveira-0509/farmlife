@@ -43,7 +43,7 @@ export default function Medicos() {
                 <div className={styles.input}>
                     <input
                         type="text"
-                        placeholder="Pesquisar médico por nome..."
+                        placeholder="Pesquisar médico por nome"
                         onChange={(e) => pesquisarMedicoPorNome(e.target.value)}
                     />
                 </div>
