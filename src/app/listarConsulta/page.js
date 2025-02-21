@@ -1,49 +1,56 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from "react";
-import styles from "./medico.module.css";
+import styles from "./consulta.module.css";
 
-const urlPadrao = "https://api-clinica-2a.onrender.com/medicos";
+const urlPadrao = "https://api-clinica-2a.onrender.com/consultas";
 
-export default function Medicos() {
-    const [medicos, setMedicos] = useState([]);
-    const [medicosFiltrados, setMedicosFiltrados] = useState([]);
+export default function Consulta() {
+    const [consultas, setConsultas] = useState([]);
+    const [consultasFiltradas, setConsultasFiltradas] = useState([]);
     const [botaoOpen, setBotaoOpen] = useState(false);
 
-    async function apresetarTodosMedicos() {
+    async function apresentarTodasConsultas() { // Corrigi o nome da função
         try {
             const response = await fetch(urlPadrao);
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados:" + response.statusText);
             }
             const data = await response.json();
-            setMedicos(data);
-            setMedicosFiltrados(data);
+            setConsultas(data);
+            setConsultasFiltradas(data);
         } catch (error) {
             console.log('Ocorreu algum erro:' + error);
         }
-    }
+    };
 
     const pesquisarMedicoPorNome = (nome) => {
-        const filtrados = medicos.filter((medico) =>
-            medico.nome.toLowerCase().includes(nome.toLowerCase())
+        const filtrados = consultas.filter((medico) =>
+            medico?.nome?.toLowerCase().includes(nome.toLowerCase())
         );
-        setMedicosFiltrados(filtrados);
+        setConsultasFiltradas(filtrados);
+    };
+
+    const pesquisarPacientePorNome = (nome) => {
+        const filtrados = consultas.filter((paciente) =>
+            paciente.nome.toLowerCase().includes(nome.toLowerCase())
+        );
+        setPacientesFiltrados(filtrados);
     };
 
     useEffect(() => {
-        apresetarTodosMedicos();
+        apresentarTodasConsultas();
     }, []);
 
     return (
         <div className={styles.body}>
             <div className={styles.fundo}>
                 <div className={styles.titulo2}>
-                    <h1 className={styles.titulo}>Lista de Médicos</h1>
+                    <h1 className={styles.titulo}>Listar Consultas</h1>
                 </div>
 
                 <div>
                     <button className={styles.botaoTable} onClick={() => setBotaoOpen(!botaoOpen)}>
-                        <h1>Varredura</h1>
+                        <h1>Buscar por médicos</h1>
                     </button>
                     {botaoOpen && (
                         <>
@@ -63,16 +70,12 @@ export default function Medicos() {
                                         <thead>
                                             <tr>
                                                 <th>Nome</th>
-                                                <th>telefone</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {medicosFiltrados.map((medico) => (
-                                                <tr key={medico.id}>
-
-                                                    <td>{medico.nome}</td>
-                                                    <td>{medico.telefone}</td>
-
+                                            {consultasFiltradas.map((consulta) => (
+                                                <tr key={consulta.id}>
+                                                    <td>{consulta.medico}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -91,20 +94,20 @@ export default function Medicos() {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Telefone</th>
+                                <th>Medico</th>
                                 <th>Especialidade</th>
+                                <th>Paciente</th>
+                                <th>Tipo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {medicosFiltrados.map((medico) => (
-                                <tr key={medico.id}>
-                                    <td>{medico.id}</td>
-                                    <td>{medico.nome}</td>
-                                    <td>{medico.email}</td>
-                                    <td>{medico.telefone}</td>
-                                    <td>{medico.especialidade}</td>
+                            {consultasFiltradas.map((consulta) => (
+                                <tr key={consulta.id}>
+                                    <td>{consulta.id}</td>
+                                    <td>{consulta.medico}</td>
+                                    <td>{consulta.especialidade}</td>
+                                    <td>{consulta.paciente}</td>
+                                    <td>{consulta.tipo}</td>
                                 </tr>
                             ))}
                         </tbody>

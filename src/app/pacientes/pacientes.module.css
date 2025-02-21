@@ -25,24 +25,6 @@
     justify-content: center;
 }
 
-.input{
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-    z-index:1000;
-}
-
-.input input {
-    padding: 8px;
-    font-size: 16px;
-    border: 2px solid #127b3a;
-    border-radius: 5px;
-    width: 60%;
-    max-width: 400px;
-    background-color: #F7F7F7;
-    color: #02330a;
-}
-
 .tabela {
     margin-top: 20px;
     overflow-x: auto;
@@ -79,6 +61,27 @@
     color: #02330d;
 }
 
+/* /////////////////////////////////////////// */
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0;
+    z-index:1000;
+}
+
+.input input {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #127b3a;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #F7F7F7;
+    color: #02330a;
+}
+
+
 .fundoPop{
     display:flex;
     position: fixed;
@@ -95,8 +98,8 @@
     top:50%;
     left:50%;
     display:flex;
-    width: 95%;
-    height:50vh;
+    width: 75%;
+    height:75vh;
     background-color: white;
     z-index:1000;
     transform:translate(-50%,-50%);
@@ -104,4 +107,53 @@
     align-items: center ;
     flex-direction: column;
     gap:30px;
+}
+
+.botaoTable{
+    background-color: #02330a;
+    color: white;
+    margin-left: 5vw;
+    margin-top:8vh;
+    width: 20%;
+    height: 7vh;
+    font-size: 1vw;
+    border-radius: 15px;
+}
+
+.tabelaPop {
+    width:80%;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    table-layout: fixed;
+}
+
+.tabelaPop table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #F7F7F7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabelaPop th, 
+.tabelaPop td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #a9e5b8;
+}
+
+.tabelaPop th {
+    background-color: #127b29;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabelaPop tr:hover {
+    background-color: #a9e5ae;
+}
+
+.tabelaPop td {
+    color: #02330d;
 }

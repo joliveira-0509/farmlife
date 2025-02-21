@@ -33,12 +33,7 @@ export default function Header() {
                     <h1>FARM LIFE</h1>
                     <h2>~ health center ~</h2>
                 </div>
-                <button
-                    id="botao" className={style.botao}
-                >
-                    <h1>Acessar</h1>
-                </button>
-
+                <div></div> {/* Gambiarra ksksksk */}
             </section>
 
             <section className={style.acessos}>
@@ -85,7 +80,7 @@ export default function Header() {
                         >Agendamentos
                             {consultaOpen && (
                                 <ul>
-                                    <li>Listar Consultas</li>
+                                    <li> <Link href="/listarConsulta" >ListarConsulta</Link> </li>
                                     <li>Agendar Consulta</li>
                                     <li>Reagendar</li>
                                     <li>Cancelar</li>

@@ -13,10 +13,10 @@ export default function pacientes() {
     async function consoleLogPacientes() {
         try {
             const resposta = await fetch(urlPadrao);
-            if (!resposta.true) {
+            if (!resposta.ok) {
                 throw new Error("Erro ao buscar dados:" + resposta.statusText);
             }
-            const data = await response.json();
+            const data = await resposta.json();
             setPacientes(data);
             setPacientesFiltrados(data);
         } catch (error) {
@@ -25,8 +25,8 @@ export default function pacientes() {
     }
 
     const pesquisarPacientePorNome = (nome) => {
-        const filtrados = pacientes.filter((pacientes) =>
-            Medicos.nome.toLowerCase().includes(nome.toLowerCase())
+        const filtrados = pacientes.filter((paciente) =>
+            paciente.nome.toLowerCase().includes(nome.toLowerCase())
         );
         setPacientesFiltrados(filtrados);
     };
@@ -34,8 +34,6 @@ export default function pacientes() {
     useEffect(() => {
         consoleLogPacientes();
     }, []);
-
-
 
     return (
         <div className={styles.body}>
@@ -61,8 +59,26 @@ export default function pacientes() {
                                     />
                                 </div>
 
-                                <div className={styles.tabela}>
-                                    <ul>{pacientesFiltrados.map((pacientes) => (<li key={pacientes.id}>{pacientes.nome}</li>))}</ul>
+                                <div className={styles.tabelaPop}>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>telefone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {pacientesFiltrados.map((paciente) => (
+                                                <tr key={paciente.id}>
+                                                    
+                                                    <td>{paciente.nome}</td>
+                                                    <td>{paciente.telefone}</td>
+                                                   
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+
                                 </div>
 
                             </div>
@@ -70,7 +86,6 @@ export default function pacientes() {
                         </>
                     )}
                 </div>
-
 
                 <div className={styles.tabela}>
                     <table>
