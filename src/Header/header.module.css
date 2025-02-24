@@ -8,12 +8,11 @@
     z-index: 1;
 }
 
-
 .navegador {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 30px 0px 20px;
+    padding: 0 30px 0 20px;
 }
 
 .imagem {
@@ -49,66 +48,94 @@
     justify-content: space-evenly;
 }
 
-.medico {
+.acessos li {
+    text-decoration: none;
+    list-style: none;
+    font: inherit;
+    color: inherit;
+}
+
+.acessos li a {
+    text-decoration: none;
+    list-style: none;
+    font: inherit;
+    color: inherit;
+}
+
+.medico, .paciente, .agendamento {
     width: 10%;
     max-width: 10%;
     height: auto;
     display: flex;
+}
+
+.medico ul, .paciente ul, .agendamento ul {
+    width: 10vw;
+    height: auto;
+    margin-bottom: -20vh;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #64B775;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .medico ul {
-    width: 8vw;
-    height: auto;
-    margin-bottom: -20vh;
-    margin-left: -4vw;
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #64B775;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.paciente {
-    width: 10%;
-    max-width: 10%;
-    height: auto;
-    display: flex;
+    margin-left: -6vw;
 }
 
 .paciente ul {
-    width: 8vw;
-    height: auto;
-    margin-bottom: -20vh;
-    margin-left: -5vw;
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #64B775;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.agendamento {
-    width: 10%;
-    max-width: 10%;
-    height: auto;
-    display: flex;
+    margin-left: -6vw;
 }
 
 .agendamento ul {
-    width: 8vw;
-    height: auto;
-    margin-bottom: -20vh;
-    margin-left: -6vw;
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #64B775;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    margin-left:-8vw;
 }
 
+.medico ul li, .paciente ul li, .agendamento ul li {
+    list-style: none;
+    font: inherit;
+    background: none;
+    color: inherit;
+}
+
+.medico ul li a, .paciente ul li a, .agendamento ul li a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+@media (max-width: 400px) {
+    .acessos {
+        padding: 0 20px;
+        font-size: 12px;
+    }
+
+    .medico ul {
+        gap: 5px;
+        width: 750px;
+        padding: 20%;
+        margin-left: -40px;
+    }
+    
+    .paciente ul{
+        gap: 5px;
+        width: 750px;
+        padding: 20%;
+        margin-left: -50px;
+    }
+    
+    .agendamento ul{
+        gap: 5px;
+        width: 750px;
+        padding: 20%;
+        margin-left: -75px;
+    }
+
+    .imagem {
+        width: 9vw;
+        height: auto;
+    }
+}

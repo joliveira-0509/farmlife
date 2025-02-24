@@ -7,9 +7,10 @@ const urlPadrao = "https://api-clinica-2a.onrender.com/consultas";
 export default function Consulta() {
     const [consultas, setConsultas] = useState([]);
     const [consultasFiltradas, setConsultasFiltradas] = useState([]);
-    const [botaoOpen, setBotaoOpen] = useState(false);
+    const [botaoMedicoOpen, setBotaoMedicoOpen] = useState(false);
+    const [botaoPacienteOpen, setBotaoPacienteOpen] = useState(false);
 
-    async function apresentarTodasConsultas() { // Corrigi o nome da função
+    async function apresentarTodasConsultas() {
         try {
             const response = await fetch(urlPadrao);
             if (!response.ok) {
@@ -21,20 +22,20 @@ export default function Consulta() {
         } catch (error) {
             console.log('Ocorreu algum erro:' + error);
         }
-    };
+    }
 
     const pesquisarMedicoPorNome = (nome) => {
-        const filtrados = consultas.filter((medico) =>
-            medico?.nome?.toLowerCase().includes(nome.toLowerCase())
+        const filtrados = consultas.filter((consulta) =>
+            consulta.medico.toLowerCase().includes(nome.toLowerCase())
         );
         setConsultasFiltradas(filtrados);
     };
 
     const pesquisarPacientePorNome = (nome) => {
-        const filtrados = consultas.filter((paciente) =>
-            paciente.nome.toLowerCase().includes(nome.toLowerCase())
+        const filtrados = consultas.filter((consulta) =>
+            consulta.paciente.toLowerCase().includes(nome.toLowerCase())
         );
-        setPacientesFiltrados(filtrados);
+        setConsultasFiltradas(filtrados);
     };
 
     useEffect(() => {
@@ -48,45 +49,82 @@ export default function Consulta() {
                     <h1 className={styles.titulo}>Listar Consultas</h1>
                 </div>
 
-                <div>
-                    <button className={styles.botaoTable} onClick={() => setBotaoOpen(!botaoOpen)}>
-                        <h1>Buscar por médicos</h1>
-                    </button>
-                    {botaoOpen && (
-                        <>
-                            <div className={styles.fundoPop} onClick={() => setBotaoOpen(!botaoOpen)}></div>
+                <div className={styles.divbotao}>
+                    <div>
+                        <button className={styles.botaoTable} onClick={() => setBotaoMedicoOpen(!botaoMedicoOpen)}>
+                            <h1>Buscar por médicos</h1>
+                        </button>
+                        {botaoMedicoOpen && (
+                            <>
+                                <div className={styles.fundoPop} onClick={() => setBotaoMedicoOpen(!botaoMedicoOpen)}></div>
 
-                            <div className={styles.cardpop}>
-                                <div className={styles.input}>
-                                    <input
-                                        type="text"
-                                        placeholder="Pesquisar por médicos"
-                                        onChange={(e) => pesquisarMedicoPorNome(e.target.value)}
-                                    />
-                                </div>
+                                <div className={styles.cardpop}>
+                                    <div className={styles.input}>
+                                        <input
+                                            type="text"
+                                            placeholder="Pesquisar por médicos"
+                                            onChange={(e) => pesquisarMedicoPorNome(e.target.value)}
+                                        />
+                                    </div>
 
-                                <div className={styles.tabelaPop}>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {consultasFiltradas.map((consulta) => (
-                                                <tr key={consulta.id}>
-                                                    <td>{consulta.medico}</td>
+                                    <div className={styles.tabelaPop}>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
                                                 </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-
+                                            </thead>
+                                            <tbody>
+                                                {consultasFiltradas.map((consulta) => (
+                                                    <tr key={consulta.id}>
+                                                        <td>{consulta.medico}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+                            </>
+                        )}
+                    </div>
 
-                            </div>
+                    <div>
+                        <button className={styles.botaoTable} onClick={() => setBotaoPacienteOpen(!botaoPacienteOpen)}>
+                            <h1>Buscar por paciente</h1>
+                        </button>
+                        {botaoPacienteOpen && (
+                            <>
+                                <div className={styles.fundoPop} onClick={() => setBotaoPacienteOpen(!botaoPacienteOpen)}></div>
 
-                        </>
-                    )}
+                                <div className={styles.cardpop}>
+                                    <div className={styles.input}>
+                                        <input
+                                            type="text"
+                                            placeholder="Pesquisar por paciente"
+                                            onChange={(e) => pesquisarPacientePorNome(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className={styles.tabelaPop}>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {consultasFiltradas.map((consulta) => (
+                                                    <tr key={consulta.id}>
+                                                        <td>{consulta.paciente}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 <div className={styles.tabela}>

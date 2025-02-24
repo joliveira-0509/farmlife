@@ -4,7 +4,7 @@ import { SquareCheckBig } from "lucide-react";
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.body}>
       <div className={styles.apresenta}>
         <h1>Bem-Vindo ao Farm Life</h1>
         <h3>No Farm Life, nossa missão é proporcionar uma melhor comunicação entre nossos pacientes e médicos visando um melhor atendimento e tratamento. Nosso site tem como objetivo centralizar ações para agilizar os processos de atendimentos. </h3>

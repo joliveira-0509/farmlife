@@ -38,9 +38,9 @@ export default function Header() {
 
             <section className={style.acessos}>
                 <nav>
-                    <ul className={style.li}>
+                    <ul>
                         <li>
-                            <Link href="/" className={style.link}>Home</Link>
+                            <Link href="/">Home</Link>
                         </li>
                         <div
                             className={style.medico}
@@ -49,11 +49,7 @@ export default function Header() {
                         > medicos
                             {medicoOpen && (
                                 <ul>
-                                    <li>Listar Registros</li>
                                     <li> <Link href='/medicos' >Buscar</Link> </li>
-                                    <li>Adicionar Novo</li>
-                                    <li>Editar</li>
-                                    <li>Excluir</li>
                                 </ul>
                             )}
 
@@ -65,11 +61,9 @@ export default function Header() {
                         > Pacientes
                             {pacienteOpen && (
                                 <ul>
-                                    <li>Listar Registros</li>
+                                  
                                     <li><Link href='/pacientes'>Buscar</Link></li>
-                                    <li>Adicionar Novo</li>
-                                    <li>Editar</li>
-                                    <li>Excluir</li>
+                                    
                                 </ul>
                             )}
                         </div>
@@ -80,10 +74,9 @@ export default function Header() {
                         >Agendamentos
                             {consultaOpen && (
                                 <ul>
-                                    <li> <Link href="/listarConsulta" >ListarConsulta</Link> </li>
-                                    <li>Agendar Consulta</li>
-                                    <li>Reagendar</li>
-                                    <li>Cancelar</li>
+                                    <li> <Link href="/listarConsulta" >Listar Consulta</Link> </li>
+                                    <li> <Link href='/agendarConsulta'> Agendar Consulta </Link> </li>
+                                 
                                 </ul>
                             )}
                         </div>

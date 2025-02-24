@@ -63,6 +63,23 @@
 
 /* /////////////////////////////////////////// */
 
+.divbotao{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.botaoTable{
+    background-color: #02330a;
+    color: white;
+    margin-left: 5vw;
+    margin-top:8vh;
+    width: 70%;
+    height: 7vh;
+    font-size: 0.5vw;
+    border-radius: 15px;
+}
+
 .input{
     display: flex;
     justify-content: center;
@@ -109,16 +126,6 @@
     gap:30px;
 }
 
-.botaoTable{
-    background-color: #02330a;
-    color: white;
-    margin-left: 5vw;
-    margin-top:8vh;
-    width: 20%;
-    height: 7vh;
-    font-size: 0.5vw;
-    border-radius: 15px;
-}
 
 .tabelaPop {
     width:80%;
@@ -156,4 +163,14 @@
 
 .tabelaPop td {
     color: #02330d;
+}
+
+@media (max-width: 400px) {
+    .divbotao{
+        width: 75%;
+    }
+
+    .botaoTable{
+        font-size: 2vw;
+    }
 }
